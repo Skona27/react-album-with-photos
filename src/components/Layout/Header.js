@@ -1,8 +1,10 @@
 import React from 'react';
 
+import {header} from './Layout.module.scss';
+
 const Header = () => (
-  <nav>
-      <h1>Zadanie Testowe</h1>
+  <nav className={header}>
+      <h1 className='primary-heading primary-heading--white'>Test Assignment</h1>
   </nav>
 );
 

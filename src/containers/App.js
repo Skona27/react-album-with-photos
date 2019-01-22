@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
+import './App.scss';
+
 // Layout view-components
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
@@ -9,16 +11,19 @@ import Footer from '../components/Layout/Footer';
 import AlbumPage from './Pages/AlbumPage';
 import PhotosPage from './Pages/PhotosPage';
 
+// HOC
+import Aux from '../hoc/Aux';
+
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <Aux>
           <Header/>
-            <Route exact path='/' component={AlbumPage}/>
-            <Route path='/albums/:id' component={PhotosPage}/>
+          <Route exact path='/' component={AlbumPage}/>
+          <Route path='/albums/:id' component={PhotosPage} />
           <Footer/>
-        </div>
+        </Aux>
       </Router>
     );
   }

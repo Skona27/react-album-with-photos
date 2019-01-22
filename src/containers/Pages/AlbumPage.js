@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import api from '../../api';
 
+// Styles
+import {titleBar} from './Page.module.scss';
+
 // Import view-components
 import AlbumList from '../../components/Album/AlbumList';
 import Pagination from '../../components/Pagination/Pagination';
@@ -30,7 +33,7 @@ class AlbumPage extends Component {
 
     getAlbums = async (page = 1) => {
         // Loading data
-        this.setState({...this.state, loading: true, page});
+        this.setState({...this.state, loading: true});
 
         const albums = await api.get(`albums?_page=${page}&_limit=${this.state.perPage}`);
 
@@ -43,7 +46,7 @@ class AlbumPage extends Component {
         this.pagination(albums.headers.link);
 
         // Data loaded
-        this.setState({...this.state, albums: albums.data, loading: false});
+        this.setState({...this.state, page, albums: albums.data, loading: false});
     };
 
     // TODO - add caching
@@ -91,11 +94,15 @@ class AlbumPage extends Component {
         const {nextPage, prevPage, page, albums, loading} = this.state;
 
         return (
-            <div>
+            <main>
+                <div className={titleBar}>
+                    <h1 className="primary-heading">See all albums</h1>
+                    <Pagination isNext={nextPage} isPrev={prevPage} current={page}
+                                nextPage={this.nextPage} prevPage={this.prevPage} />
+                </div>
+
                 <AlbumWithLoader loading={loading} albums={albums} />
-                <Pagination isNext={nextPage} isPrev={prevPage} current={page}
-                nextPage={this.nextPage} prevPage={this.prevPage} />
-            </div>
+            </main>
         )
     }
 }

@@ -4,7 +4,10 @@ import {item} from './Photos.module.scss';
 
 
 const PhotoItem = props => (
-    <img className={item} src={props.thumbnailUrl} />
+    <figure className={item}>
+        <img src={props.thumbnailUrl} />
+        <figcaption>{props.title}</figcaption>
+    </figure>
 );
 
 export default PhotoItem;

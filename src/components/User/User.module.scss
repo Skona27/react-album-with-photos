@@ -1,0 +1,22 @@
+.authorDetails {
+  grid-column: 6 / -1;
+  grid-row: 1 / 3;
+
+  margin: 0 3rem;
+  padding: 3rem;
+  background-color: #7158e2;
+  color: #fefefe;
+  height: 36rem;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.marginTop {
+  margin-top: 1rem;
+}
+.authorHeading {
+  border-bottom: 1px solid #fefefe;
+  margin-bottom: 2rem;
+}
