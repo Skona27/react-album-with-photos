@@ -5,6 +5,11 @@ import api from '../../api';
 import AlbumList from '../../components/Album/AlbumList';
 import Pagination from '../../components/Pagination/Pagination';
 
+// HOC
+import withLoader from '../../hoc/withLoader';
+
+const AlbumWithLoader = withLoader(AlbumList);
+
 class AlbumPage extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +19,8 @@ class AlbumPage extends Component {
           page: null,
           prevPage: false,
           nextPage: false,
-          albums: []
+          albums: [],
+          loading: false,
         };
     }
 
@@ -23,33 +29,38 @@ class AlbumPage extends Component {
     }
 
     getAlbums = async (page = 1) => {
-        let albums = await api.get(`albums?_page=${page}&_limit=${this.state.perPage}`);
+        // Loading data
+        this.setState({...this.state, loading: true, page});
+
+        const albums = await api.get(`albums?_page=${page}&_limit=${this.state.perPage}`);
 
         for (let album of albums.data) {
-            let username = await this.getUsername(album.userId);
+            const username = await this.getUsername(album.userId);
             album.username = username;
         }
 
         // Pagination info from response header
         this.pagination(albums.headers.link);
 
-        this.setState({...this.state, page, albums: albums.data});
+        // Data loaded
+        this.setState({...this.state, albums: albums.data, loading: false});
     };
 
     // TODO add caching
     getUsername = async userId => {
-        let user = await api.get(`users/${userId}`);
+        const user = await api.get(`users/${userId}`);
         return user.data.username;
     };
 
     pagination = headers => {
-        let links = headers.split(',');
+        // Splitting links from header
+        const links = headers.split(',');
 
         // Representation of pages availability
-        let pages = {nextPage: false, prevPage: false};
+        const pages = {nextPage: false, prevPage: false};
 
         links.forEach(link => {
-            let temp = link.split(';');
+            const temp = link.split(';');
 
             // Switching on link.rel
             switch(temp[1].replace(/\s/g, "")) {
@@ -77,10 +88,12 @@ class AlbumPage extends Component {
 
 
     render() {
+        const {nextPage, prevPage, page, albums, loading} = this.state;
+
         return (
             <div>
-                <AlbumList albums={this.state.albums} />
-                <Pagination isNext={this.state.nextPage} isPrev={this.state.prevPage} current={this.state.page}
+                <AlbumWithLoader loading={loading} albums={albums} />
+                <Pagination isNext={nextPage} isPrev={prevPage} current={page}
                 nextPage={this.nextPage} prevPage={this.prevPage} />
             </div>
         )
