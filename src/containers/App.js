@@ -7,6 +7,7 @@ import Footer from '../components/Layout/Footer';
 
 // Pages stateful-components
 import AlbumPage from './Pages/AlbumPage';
+import PhotosPage from './Pages/PhotosPage';
 
 class App extends Component {
   render() {
@@ -14,7 +15,8 @@ class App extends Component {
       <Router>
         <div>
           <Header/>
-          <Route exact path='/' component={AlbumPage}/>
+            <Route exact path='/' component={AlbumPage}/>
+            <Route path='/albums/:id' component={PhotosPage}/>
           <Footer/>
         </div>
       </Router>

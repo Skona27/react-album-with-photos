@@ -46,7 +46,7 @@ class AlbumPage extends Component {
         this.setState({...this.state, albums: albums.data, loading: false});
     };
 
-    // TODO add caching
+    // TODO - add caching
     getUsername = async userId => {
         const user = await api.get(`users/${userId}`);
         return user.data.username;
