@@ -9,6 +9,7 @@ import {photosPage, titleBar, closeBtn, heading1} from './Page.module.scss';
 // Import view-components
 import PhotoList from '../../components/Photos/PhotoList';
 import AuthorDetails from '../../components/User/AuthorDetails';
+import PhotoFullSize from "../../components/Photos/PhotoFullSize";
 
 // HOC
 import withLoader from '../../hoc/withLoader';
@@ -35,7 +36,9 @@ class PhotosPage extends Component {
             },
             photos: [],
             posts: [],
-            loading: false
+            loading: false,
+            imgFullSize: false,
+            fullSizeURL: null
         };
     }
 
@@ -86,6 +89,14 @@ class PhotosPage extends Component {
       return posts.data;
     };
 
+    displayFullSize = url => {
+        this.setState({...this.state, imgFullSize: true, fullSizeURL: url});
+    };
+
+    closeFullSize = () => {
+      this.setState({...this.state, imgFullSize: false, fullSizeURL: null});
+    };
+
     render() {
         return (
             <main>
@@ -96,10 +107,13 @@ class PhotosPage extends Component {
                     </div>
 
                     <div className={photosPage}>
-                        <PhotoList photos={this.state.photos}/>
+                        <PhotoList photos={this.state.photos} photoClick={this.displayFullSize} />
                         <AuthorDetails info={this.state.user} posts={this.state.posts}/>
                     </div>
                 </AuxWithLoader>
+
+                <PhotoFullSize show={this.state.imgFullSize} url={this.state.fullSizeURL}
+                    close={this.closeFullSize} />
             </main>
         )
     }

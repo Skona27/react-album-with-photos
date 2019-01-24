@@ -4,7 +4,7 @@ import PhotoItem from './PhotoItem';
 
 const PhotoList = props => (
     props.photos.map(photo => (
-        <PhotoItem {...photo} />
+        <PhotoItem {...photo} fullSize={props.photoClick} />
      ))
 );
 
