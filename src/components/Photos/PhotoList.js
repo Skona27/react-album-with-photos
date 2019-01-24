@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const PhotoList = props => (
     props.photos.map(photo => (
-        <PhotoItem {...photo} fullSize={props.photoClick} />
+        <PhotoItem key={photo.id} {...photo} fullSize={props.photoClick} />
      ))
 );
 
