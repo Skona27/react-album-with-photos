@@ -4,7 +4,9 @@ import {footer} from './Layout.module.scss';
 
 const Footer = () => (
     <footer className={footer}>
-        <p>Autor: Jakub Skoneczny</p>
+        <p>Author: Jakub Skoneczny,
+            Portfolio <a href='https://jskoneczny.pl' target='_blank'>jskoneczny.pl</a>
+        </p>
     </footer>
 );
 

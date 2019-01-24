@@ -1,6 +1,8 @@
 // General styles
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
 @import './variables';
+@import './media';
+
 
 *,
 *::after,
@@ -13,6 +15,14 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -28,4 +38,12 @@ main {
   min-height: calc(100vh - 14rem);
   padding: 5rem 12rem;
   position: relative;
+
+  @include respond(tab-land) {
+    padding: 4rem 6rem;
+  }
+
+  @include respond(phone) {
+    padding: 2rem;
+  }
 }

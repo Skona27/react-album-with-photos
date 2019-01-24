@@ -92,7 +92,7 @@ class PhotosPage extends Component {
                 <AuxWithLoader loading={this.state.loading}>
                     <div className={titleBar}>
                         <h1 className={heading1}>Album: {this.state.album.title}</h1>
-                        <Link className={closeBtn} to='/'>Close album X</Link>
+                        <Link className={closeBtn} to='/'>Close X</Link>
                     </div>
 
                     <div className={photosPage}>

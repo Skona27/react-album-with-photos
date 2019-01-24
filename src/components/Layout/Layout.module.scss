@@ -1,15 +1,33 @@
 @import '../../sass/variables';
+@import '../../sass/media';
+
 
 .header {
   background-color: $color-primary;
   padding: 2rem 12rem;
   min-height: 4rem;
+
+  @include respond(tab-land) {
+    padding: 2rem 6rem;
+  }
+
+  @include respond(phone) {
+    padding: 2rem;
+  }
 }
 
 .footer {
   padding: 2rem 12rem;
   background-color: $color-dark;
   color: $color-white-2;
+
+  @include respond(tab-land) {
+    padding: 2rem 6rem;
+  }
+
+  @include respond(phone) {
+    padding: 2rem;
+  }
 }
 
 .heading1 {
