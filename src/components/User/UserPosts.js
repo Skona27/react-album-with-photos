@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {list, marginTop} from './User.module.scss';
+import PropTypes from "prop-types";
 
 const UserPosts = props => (
     <div>
@@ -10,5 +11,9 @@ const UserPosts = props => (
         </ul>
     </div>
 );
+
+UserPosts.propTypes = {
+    posts: PropTypes.array
+};
 
 export default UserPosts;

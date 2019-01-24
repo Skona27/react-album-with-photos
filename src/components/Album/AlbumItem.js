@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {albumItem, albumPhoto, caption, link} from './Album.module.scss'
 
@@ -18,5 +19,11 @@ const AlbumItem = props => (
         </Link>
     </div>
 );
+
+AlbumItem.propTypes = {
+  id: PropTypes.any,
+  title: PropTypes.string,
+  username: PropTypes.string
+};
 
 export default AlbumItem;

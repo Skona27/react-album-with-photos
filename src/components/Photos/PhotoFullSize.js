@@ -4,6 +4,7 @@ import {fullSize} from "./Photos.module.scss";
 
 import Aux from "../../hoc/Aux";
 import Backdrop from "../Backdrop/Backdrop";
+import PropTypes from "prop-types";
 
 const PhotoFullSize = props => (
     props.show ?
@@ -15,6 +16,11 @@ const PhotoFullSize = props => (
         </Aux>
     : null
 );
+
+PhotoFullSize.propTypes = {
+    show: PropTypes.bool,
+    url: PropTypes.any
+};
 
 
 export default PhotoFullSize;

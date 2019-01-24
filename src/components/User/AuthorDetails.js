@@ -4,6 +4,7 @@ import {authorDetails, authorHeading} from './User.module.scss';
 
 import UserInfo from '../../components/User/UserInfo';
 import UserPosts from '../../components/User/UserPosts';
+import PropTypes from "prop-types";
 
 
 const AuthorDetails = props => (
@@ -13,5 +14,10 @@ const AuthorDetails = props => (
         <UserPosts posts={props.posts}/>
     </div>
 );
+
+AuthorDetails.propTypes = {
+    info: PropTypes.any,
+    posts: PropTypes.array
+};
 
 export default AuthorDetails;
