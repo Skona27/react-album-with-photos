@@ -1,6 +1,8 @@
+@import '../../sass/variables';
+
 .spinner {
-  border: 16px solid #f1f1f1;
-  border-top: 16px solid #7158e2;
+  border: 16px solid $color-white-2;
+  border-top: 16px solid $color-primary;
   border-radius: 50%;
   width: 120px;
   height: 120px;

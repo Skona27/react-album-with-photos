@@ -1,11 +1,18 @@
+@import '../../sass/variables';
+
 .header {
-  background-color: #7158e2;
+  background-color: $color-primary;
   padding: 2rem 12rem;
   min-height: 4rem;
 }
 
 .footer {
   padding: 2rem 12rem;
-  background-color: #191818;
-  color: #efefef;
+  background-color: $color-dark;
+  color: $color-white-2;
+}
+
+.heading1 {
+  color: $color-white;
+  letter-spacing: 1px;
 }

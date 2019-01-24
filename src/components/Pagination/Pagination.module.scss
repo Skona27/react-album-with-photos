@@ -1,14 +1,16 @@
+@import '../../sass/variables';
+
 .button {
   border-style: solid;
   border-radius: 1px;
   border-width: 3px;
-  border-color: #7158e2;
+  border-color: $color-primary;
   display: inline-block;
   padding: .4rem .6rem;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: #7158e2;
-  color: #fefefe;
+  background-color: $color-primary;
+  color: $color-white;
 
   &:hover {
     cursor: pointer;

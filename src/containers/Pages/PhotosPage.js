@@ -3,7 +3,8 @@ import {Link} from "react-router-dom";
 
 import api from '../../api';
 
-import {photosPage, titleBar, closeBtn} from './Page.module.scss';
+// Styles
+import {photosPage, titleBar, closeBtn, heading1} from './Page.module.scss';
 
 // Import view-components
 import PhotoList from '../../components/Photos/PhotoList';
@@ -12,8 +13,8 @@ import AuthorDetails from '../../components/User/AuthorDetails';
 // HOC
 import withLoader from '../../hoc/withLoader';
 import Aux from '../../hoc/Aux';
-
 const AuxWithLoader = withLoader(Aux);
+
 
 class PhotosPage extends Component {
     constructor(props) {
@@ -90,7 +91,7 @@ class PhotosPage extends Component {
             <main>
                 <AuxWithLoader loading={this.state.loading}>
                     <div className={titleBar}>
-                        <h1 className="primary-heading">Album: {this.state.album.title}</h1>
+                        <h1 className={heading1}>Album: {this.state.album.title}</h1>
                         <Link className={closeBtn} to='/'>Close album X</Link>
                     </div>
 

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import api from '../../api';
 
 // Styles
-import {titleBar} from './Page.module.scss';
+import {titleBar, heading1} from './Page.module.scss';
 
 // Import view-components
 import AlbumList from '../../components/Album/AlbumList';
@@ -10,8 +10,8 @@ import Pagination from '../../components/Pagination/Pagination';
 
 // HOC
 import withLoader from '../../hoc/withLoader';
-
 const AlbumWithLoader = withLoader(AlbumList);
+
 
 class AlbumPage extends Component {
     constructor(props) {
@@ -37,6 +37,7 @@ class AlbumPage extends Component {
 
         const albums = await api.get(`albums?_page=${page}&_limit=${this.state.perPage}`);
 
+        // Assign user info to album
         for (let album of albums.data) {
             const username = await this.getUsername(album.userId);
             album.username = username;
@@ -59,7 +60,7 @@ class AlbumPage extends Component {
         // Splitting links from header
         const links = headers.split(',');
 
-        // Representation of pages availability
+        // State representation of pages availability
         const pages = {nextPage: false, prevPage: false};
 
         links.forEach(link => {
@@ -81,11 +82,11 @@ class AlbumPage extends Component {
         });
     };
 
-    nextPage = async () => {
+    loadNextPage = async () => {
         await this.getAlbums(this.state.page + 1);
     };
 
-    prevPage = async () => {
+    loadPrevPage = async () => {
        await this.getAlbums(this.state.page - 1);
     };
 
@@ -96,9 +97,9 @@ class AlbumPage extends Component {
         return (
             <main>
                 <div className={titleBar}>
-                    <h1 className="primary-heading">See all albums</h1>
+                    <h1 className={heading1}>See all albums</h1>
                     <Pagination isNext={nextPage} isPrev={prevPage} current={page}
-                                nextPage={this.nextPage} prevPage={this.prevPage} />
+                                nextPage={this.loadNextPage} prevPage={this.loadPrevPage} />
                 </div>
 
                 <AlbumWithLoader loading={loading} albums={albums} />
