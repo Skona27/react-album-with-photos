@@ -1,4 +1,4 @@
-# Test Assignment
+# react-album-with-photos
 SPA application built with React.js, displaying albums and photos from JSONplaceholder API.
 
 ## Getting Started
