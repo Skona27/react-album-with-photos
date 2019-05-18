@@ -1,6 +1,8 @@
 # react-album-with-photos
 SPA application built with React.js, displaying albums and photos from JSONplaceholder API.
 
+Online: [LIVE](https://skona27.github.io/react-album-with-photos/#/)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
