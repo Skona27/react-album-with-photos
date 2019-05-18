@@ -1,13 +1,15 @@
 {
-  "main.css": "/react-album-with-photos/static/css/main.5953b668.chunk.css",
-  "main.js": "/react-album-with-photos/static/js/main.5b0a88d6.chunk.js",
-  "main.js.map": "/react-album-with-photos/static/js/main.5b0a88d6.chunk.js.map",
-  "static/js/1.5b5df805.chunk.js": "/react-album-with-photos/static/js/1.5b5df805.chunk.js",
-  "static/js/1.5b5df805.chunk.js.map": "/react-album-with-photos/static/js/1.5b5df805.chunk.js.map",
-  "runtime~main.js": "/react-album-with-photos/static/js/runtime~main.72dea1d3.js",
-  "runtime~main.js.map": "/react-album-with-photos/static/js/runtime~main.72dea1d3.js.map",
-  "static/css/main.5953b668.chunk.css.map": "/react-album-with-photos/static/css/main.5953b668.chunk.css.map",
-  "index.html": "/react-album-with-photos/index.html",
-  "precache-manifest.cd7b674ada73a7cc0f7da62d9c7a1544.js": "/react-album-with-photos/precache-manifest.cd7b674ada73a7cc0f7da62d9c7a1544.js",
-  "service-worker.js": "/react-album-with-photos/service-worker.js"
+  "files": {
+    "main.css": "/react-album-with-photos/static/css/main.b2e453a2.chunk.css",
+    "main.js": "/react-album-with-photos/static/js/main.88ee93cf.chunk.js",
+    "main.js.map": "/react-album-with-photos/static/js/main.88ee93cf.chunk.js.map",
+    "runtime~main.js": "/react-album-with-photos/static/js/runtime~main.e468e09d.js",
+    "runtime~main.js.map": "/react-album-with-photos/static/js/runtime~main.e468e09d.js.map",
+    "static/js/2.c5669b0c.chunk.js": "/react-album-with-photos/static/js/2.c5669b0c.chunk.js",
+    "static/js/2.c5669b0c.chunk.js.map": "/react-album-with-photos/static/js/2.c5669b0c.chunk.js.map",
+    "index.html": "/react-album-with-photos/index.html",
+    "precache-manifest.49ecc384639ea413f81bb5fa28bc7d92.js": "/react-album-with-photos/precache-manifest.49ecc384639ea413f81bb5fa28bc7d92.js",
+    "service-worker.js": "/react-album-with-photos/service-worker.js",
+    "static/css/main.b2e453a2.chunk.css.map": "/react-album-with-photos/static/css/main.b2e453a2.chunk.css.map"
+  }
 }
